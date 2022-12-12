@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Electronic Signature</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(54, 54, 54);
+color: rgb(230, 230, 230);</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayoutMain">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="labelTitle">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>30</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Electronic Signature</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frameLoadedFile">
+        <layout class="QVBoxLayout" name="verticalLayoutLoadedFile">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="buttonLoadFile">
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(70, 70, 70);</string>
+           </property>
+           <property name="text">
+            <string>Load a file</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayoutFileInfo">
+           <property name="spacing">
+            <number>15</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayoutFileInfoLabels">
+             <property name="spacing">
+              <number>5</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="labelFileName">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Name of the file (without extension)</string>
+               </property>
+               <property name="text">
+                <string>File name</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelExtension">
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Extension/type of file of the loaded file</string>
+               </property>
+               <property name="text">
+                <string>Extension</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelAbsolutePath">
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Absolute path to the loaded file</string>
+               </property>
+               <property name="text">
+                <string>Absolute path</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelFileSize">
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>File size of the loaded file in Bytes</string>
+               </property>
+               <property name="text">
+                <string>File size</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelCreatedDate">
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>The date the loaded file was created</string>
+               </property>
+               <property name="text">
+                <string>Creation date</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelModifiedDate">
+               <property name="font">
+                <font>
+                 <pointsize>20</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>The date the loaded file was last modified</string>
+               </property>
+               <property name="text">
+                <string>Last modified</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="lineFileInfo">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(230, 230, 230);</string>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayoutFileInfoValues">
+             <property name="spacing">
+              <number>5</number>
+             </property>
+             <item>
+              <widget class="QLineEdit" name="fieldFileName">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Name of the file (without extension)</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(70, 70, 70);</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Load a file first</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="fieldExtension">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Extension/type of file of the loaded file</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(70, 70, 70);</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Load a file first</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="fieldAbsolutePath">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Absolute path to the loaded file</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(70, 70, 70);</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Load a file first</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="fieldFileSize">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>File size of the loaded file in Bytes</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(70, 70, 70);</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Load a file first</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="fieldCreatedDate">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>The date the loaded file was created</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(70, 70, 70);</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Load a file first</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="fieldModifiedDate">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>The date the loaded file was last modified</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(70, 70, 70);</string>
+               </property>
+               <property name="frame">
+                <bool>false</bool>
+               </property>
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Load a file first</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frameOperations">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="buttonGenerateKeys">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(70, 70, 70);</string>
+           </property>
+           <property name="text">
+            <string>Generate and export RSA keys</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>15</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="fieldPrivateKeyPath">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>The absolute path to the private key file</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="frame">
+              <bool>false</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Generate keys or load a private key</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonLoadPrivateKey">
+             <property name="minimumSize">
+              <size>
+               <width>180</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="text">
+              <string>Load private key</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonSignFile">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(70, 70, 70);</string>
+           </property>
+           <property name="text">
+            <string>Sign the loaded file</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>15</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="fieldPublicKeyPath">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>18</pointsize>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>The absolute path to the public key file</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="frame">
+              <bool>false</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>Generate keys or load a public key</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonLoadPublicKey">
+             <property name="minimumSize">
+              <size>
+               <width>180</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="text">
+              <string>Load public key</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonVerifySignature">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(70, 70, 70);</string>
+           </property>
+           <property name="text">
+            <string>Verify signature</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
